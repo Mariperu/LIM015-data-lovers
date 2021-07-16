@@ -14,7 +14,7 @@ export const search = (data, searchValue) => {
 };
 
 
-/*SACAR INFORMACION 
+/*SACAR INFORMACION
 export const information = (dataPok) => {
 
 }
@@ -31,8 +31,6 @@ export const numericalOrder = (selectOrder, dataNumber) => {
     pokemonNumberOrder = dataNumber.sort((pok1, pok2) => {
       return (pok2.num - pok1.num)
     })
-  } else {
-    return " ";
   }
   //console.log(pokemonNumberOrder);
   return pokemonNumberOrder;
@@ -43,6 +41,18 @@ export const numericalOrder = (selectOrder, dataNumber) => {
 export const alphabeticalOrder = (selectOrder, dataName) => {
 
   let pokemonNameOrder;
+  /*switch (selectOrder ) {
+    case "za":
+      dataName.sort((pok1, pok2) => {
+      return (pok1.name > pok2.name) ? -1 : 1
+    })
+   break;
+    case "az":
+      dataName.sort((pok1, pok2) => {
+      return (pok1.name < pok2.name) ? -1 : 1
+    })
+  break; }
+  return true }*/
   if (selectOrder == "az") {
     pokemonNameOrder = dataName.sort((pok1, pok2) => {
       return (pok1.name < pok2.name) ? -1 : 1
@@ -51,8 +61,6 @@ export const alphabeticalOrder = (selectOrder, dataName) => {
     pokemonNameOrder = dataName.sort((pok1, pok2) => {
       return (pok1.name > pok2.name) ? -1 : 1
     })
-  } else {
-    return " ";
   }
   //console.log(pokemonNameOrder);
   return pokemonNameOrder;
@@ -72,4 +80,57 @@ export const typeFilter = (selectorType, dataType) => {
   });
   return pokemonTypeFilter;
   //console.log(pokemonTypeFilter);
+}
+
+//FUNCION FILTRAR POR RAREZA
+
+
+export const rarityFilter = (selectorRarity, dataRarity) => {
+  const pokemonRarityFilter = dataRarity.filter((pok) => {
+    //indexOf()método devuelve posición de primera aparición valor especificado
+    //indexOf() si no coindice devuelve -1
+    if (pok.rarity.indexOf(selectorRarity) > -1) {
+      return true;
+    }
+    return false;
+  });
+  return pokemonRarityFilter;
+  //console.log(pokemonTypeFilter);
+}
+
+// FUNCION PORCENTAJE X TIPO
+export const getTypeStats = (data, valor) => {
+  let porcentaje = "";
+  let point = 0;
+
+  data.forEach((item) => {
+    item.type;
+    item.type.forEach((individual) => {
+      individual
+      if (individual === valor) {
+        point += 1
+        porcentaje = ((point / data.length) * 100).toFixed(2) + "%";
+      }
+    })
+  })
+  return porcentaje;
+  //console.log(porcentaje);
+}
+
+//CONTAR POKEMONES POR RAREZA %
+export const countRarity = (data, value) => {
+
+  let porcentaje = "";
+  let point = 0;
+  data.forEach((item) => {
+    item.rarity;
+
+    if (item.rarity === value) {
+      point += 1
+      porcentaje = ((point / data.length) * 100).toFixed(2) + "%";
+    }
+  })
+
+  return porcentaje;
+  //console.log(porcentaje);
 }
