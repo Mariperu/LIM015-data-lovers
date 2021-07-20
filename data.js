@@ -83,8 +83,6 @@ export const typeFilter = (selectorType, dataType) => {
 }
 
 //FUNCION FILTRAR POR RAREZA
-
-
 export const rarityFilter = (selectorRarity, dataRarity) => {
   const pokemonRarityFilter = dataRarity.filter((pok) => {
     //indexOf()método devuelve posición de primera aparición valor especificado
@@ -109,7 +107,7 @@ export const getTypeStats = (data, valor) => {
       individual
       if (individual === valor) {
         point += 1
-        porcentaje = ((point / data.length) * 100).toFixed(2) + "%";
+        porcentaje = ((point / data.length) * 100).toFixed(2);
       }
     })
   })
@@ -117,8 +115,8 @@ export const getTypeStats = (data, valor) => {
   //console.log(porcentaje);
 }
 
-//CONTAR POKEMONES POR RAREZA %
-export const countRarity = (data, value) => {
+//FUNCION PORCENTAJE X RAREZA 
+export const getRarityStats = (data, value) => {
 
   let porcentaje = "";
   let point = 0;
@@ -127,7 +125,7 @@ export const countRarity = (data, value) => {
 
     if (item.rarity === value) {
       point += 1
-      porcentaje = ((point / data.length) * 100).toFixed(2) + "%";
+      porcentaje = ((point / data.length) * 100).toFixed(2);
     }
   })
 

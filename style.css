@@ -57,6 +57,7 @@ header img {
 /*******MAIN******/
 main {
    background-image: url(pic/fondoPokebola.png);
+   *background-image: url(pic/pokeball123.jpg);
    background-repeat: no-repeat;
    background-size: cover;
    display: flex;
@@ -330,7 +331,7 @@ main {
    border-radius: 10px;
    padding: 2px;
    margin-top: 4px;
-   color: purple;
+   color: rgb(95, 3, 95);
 }
 .pokemonWeaknesses{
    text-align: left;
@@ -340,6 +341,17 @@ main {
    padding: 2px;
    margin-top: 4px;
    color: blue;
+}
+.pokemonRarity{
+   width: 100px;
+   font-size: 13px;
+   text-align: center;
+   margin-top: 10px;
+   margin-left: 45px;
+   margin-right: 10px;
+   color:white;
+   background-color: rgb(125, 23, 184);
+   border-radius: 10px;
 }
 
 .grass{
@@ -383,39 +395,109 @@ background-color: #8d6b48;
 }
 
 .psychic {
-   background-color: #e5c552; 
+   background-color: #e5c552;
 }
 
 .ice {
-   background-color:#3a74ba; 
+   background-color:#3a74ba;
 }
 
 .ghost {
-   background-color: #44a1a0; 
+   background-color: #44a1a0;
 }
 
 .rock {
-   background-color: #636940; 
+   background-color: #636940;
 }
 
 .dragon {
-   background-color: #004440; 
+   background-color: #004440;
    color: white;
 }
 
 .fairy {
-   background-color: #f6ab79; 
+   background-color: #f6ab79;
 }
 
 .dark {
-   background-color: #262426; 
+   background-color: #262426;
    color: gray;
 }
 
 .steel {
-   background-color:#7c7c7c; 
- }
+   background-color:#7c7c7c;
+}
 
+/****SECCION DE ESTADISTICAS ****/
+
+#sectionGeneralStats{
+   color: white;
+   *padding: 10px;
+   margin: 12px;
+   background-image: url(pic/pokeball123.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+#sectionGeneralStats h1{
+   color: #ffbe0b;
+   font-size: 45px;
+   text-align: center;
+   padding-top: 25px;
+   margin-bottom: 12px;
+   letter-spacing: 0.5px;
+   /*separa letras*/
+}
+
+#sectionGeneralStats h2{
+   color: #ffbe0b;
+   font-size: 30px;
+   padding: 5px 0px 5px 0px;
+   *line-height: 5px;
+}
+#sectionGeneralStats h3{
+   font-size: 22px;
+   padding: 5px 0px 5px 0px;
+   *line-height: 5px;
+   margin-left: 0px;
+}
+#sectionGeneralStats p {
+   font-size: 22px;
+   padding: 0px 0px 8px 0px;
+   line-height: 30px;
+}
+#rarityStatistics{
+   text-align: justify;
+   *padding-top: 25px;
+   *margin-bottom: 12px;
+   margin: 0px 40px 0px 40px;
+   *font-weight: lighter;
+}
+.stats{
+   text-align: justify;
+   *padding-top: 25px;
+   *margin-bottom: 12px;
+   margin: 0px 40px 0px 40px;
+   *font-weight: lighter;
+}
+/*
+#statsType{
+   padding: 0px;
+}*/
+.statsType li{
+   float: right;
+   list-style: none;
+   margin-right: 20px;
+}
+
+.statisticsTypeResults{
+   color: #ffbe0b;
+}
+
+.chart{
+   *padding: 10px;
+   margin:10px;
+   align-items: center;
+}
 
 /**********************BUTTON INTERACTION********************/
 .sectionButtonInteractionMain {

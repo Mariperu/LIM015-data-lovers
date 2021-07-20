@@ -3,6 +3,9 @@
 
 <head>
   <meta charset="utf-8">
+  <!--Para hacerlo responsive
+  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+
   <!--ícono que aparece en pestaña de navegación-->
   <link rel="icon" href="pic/pikachu.ico">
   <title>Pokedex</title>
@@ -12,6 +15,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Mukta:wght@300&display=swap"
     rel="stylesheet">
+
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
@@ -28,7 +33,7 @@
       <img class="icon" src="pic/pokeball.ico" alt="Home">
       <label>Home</label>
     </a>
-    <a href="#news">
+    <a href="#news" class="news">
       <img class="icon" src="pic/pikachu.ico" alt="News">
       <label>News</label>
     </a>
@@ -38,7 +43,7 @@
       <img class="icon" src="pic/statistics.ico" alt="Statistics">
       <label>Statistics</label>
     </a>
-    <a href="#follow_us">
+    <a href="" id="followUs">
       <img class="icon" src="pic/like.ico" alt="Follow_us">
       <label>Follow us</label>
     </a>
@@ -113,6 +118,7 @@
     </section>
 
     <!--------- Seccion de todos los pokemones>------>
+
     <section id="displayAllPokemons">
       <h1>Pokemons List</h1>
       <section class="displayCard" id="displayCard">
@@ -140,17 +146,30 @@
     </section>
     <!------------ Seccion de estadísticas>--------->
     <section hidden id="sectionGeneralStats">
-      <h1>Datos curiosos</h1>
-      <h1>Sabías que ?</h1>
+      <h1>Fun Facts</h1>
+
       <!--Mostrando %pokemones por rareza --->
       <section id="rarityStatistics">
+        <h2>Did you know...</h2>
+        <h3 id="rarity1"></h3>
+        <h3 id="rarity2"></h3>
+        <p>Legendary and mythical Pokémon are practically deities and their power is very far from their opponents. Not
+          for nothing the only legendary pokemon that have been defeated were by other legendary or mythical pokemon,
+          that is why it is a feat that a normal pokemon can beat them.</p>
 
-        <h2 id="rarity1"></h2>
+        <section class="chart" id="piechart_3d"></section>
+
+        <section class="chart" id="barchart_values"></section>
+
 
       </section>
-
+      <!--selec tipo --->
       <section id="statsType" class="stats">
-        <li>los pokemones de tipo :
+        <h2>Also, did you know...</h2>
+        <h3 id="typeTop"></h3>
+        <h3 id="typeBottom"></h3>
+        <p>If you want to know more about that, choose the box below.</p>
+        <li>The Pokemons type :
           <select class="selectAdvancedSearchList" id="statsByType">
             <option value="" href="" selected disabled>Choose type:</option>
             <option value="grass" href="">Grass</option>
@@ -173,18 +192,17 @@
             <option value="steel" href="">Steel</option>
           </select>
         </li>
-        <section class="statsResults">
-          <p> represetan el</p>
-          <p class="statisticsResults"></p>
-          <p> de todos los pokemones</p>
-        </section>
+        <p class="statisticsTypeResults"></p>
 
+        <section class="chart" id="piechart_3d2"></section>
 
       </section>
+
     </section>
+
     <!----------- Seccion de botones>-->
 
-    <section class="sectionButtonInteractionMain">
+    <section class=" sectionButtonInteractionMain">
       <button class="buttonInteraction" type="button" id="buttonBack">Back </button>
       <button class="buttonInteraction" type="button" id="buttonNext">Next</button>
     </section>
@@ -206,6 +224,7 @@
     </section>
 
   </main>
+
   <footer>
     <section class="footerListSocialMedia">
       <a href="https://es-la.facebook.com/PokemonGO/" alt="FacebookPokemonGo">
