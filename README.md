@@ -51,11 +51,11 @@ Este usuario busca información general sobre pokemones, basicamente para conoce
 
 Creación de nuestros prototipos:
 
-1. Diseño en papel
+1. Prototipo en papel
    ![Prototipo papel](/src/pic/PrototipoPapel2.jpg)
 
-2. Diseño final en figma
-   ![Prototipo final](/src/pic/prototipofinal.png)
+2. Prototipo final en Figma
+   ![Prototipo final](/src/pic/prototipofinal.jpg)
 
 ## 5. Testeos de usabilidad: (describir la experiencia de el uso de la pagina en DEMO de tres compañeras)
 
