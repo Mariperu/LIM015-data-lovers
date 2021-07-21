@@ -250,7 +250,7 @@ async function drawChart() {
   const json = await obtInfo();
   //console.log(json)
   const data = google.visualization.arrayToDataTable(json);
-  console.log(data);
+  //console.log(data);
   const options = {
     title: 'Pokemons Rarity',
     is3D: true,
@@ -281,7 +281,7 @@ async function drawChart2() {
   const json = await obtInfo();
   //console.log(json)
   const data = google.visualization.arrayToDataTable(json);
-  console.log(data);
+  //console.log(data);
   const options = {
     title: 'Pokemons Type water',
     is3D: true,
