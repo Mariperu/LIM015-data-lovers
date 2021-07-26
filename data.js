@@ -4,8 +4,9 @@
 
 export const search = (data, searchValue) => {
   const resultOfSearch = data.filter((pok) => {
-
-    if (pok.name.startsWith(searchValue) || pok.num.startsWith(searchValue)) {
+    //startsWith (verifica que str empiece con valor indicado) (+estricto)
+    //includes (buscar valor indicado recorriendo todo el str)
+    if (pok.name.startsWith(searchValue) || pok.num.includes(searchValue)) {
       return true;
     }
     return false;
@@ -31,19 +32,40 @@ export const numericalOrder = (selectOrder, dataNumber) => {
   return pokemonNumberOrder;
 };
 
-//FUNCION ORDEN ALFABETICO A-Z / Z-A
+
+//FUNCION ORDEN ALFABETICO A-Z / Z-A (con if/else if)
+
+// export const alphabeticalOrder = (selectOrder, dataName) => {
+
+//   let pokemonNameOrder;
+//   if (selectOrder == "az") {
+//     pokemonNameOrder = dataName.sort((pok1, pok2) => {
+//       return (pok1.name < pok2.name) ? -1 : 1;
+//     });
+//   } else if (selectOrder == "za") {
+//     pokemonNameOrder = dataName.sort((pok1, pok2) => {
+//       return (pok1.name > pok2.name) ? -1 : 1;
+//     });
+//   }
+//   //console.log(pokemonNameOrder);
+//   return pokemonNameOrder;
+// };
+
+//FUNCION ORDEN ALFABETICO A-Z / Z-A (con switch/break)
 
 export const alphabeticalOrder = (selectOrder, dataName) => {
-
   let pokemonNameOrder;
-  if (selectOrder == "az") {
-    pokemonNameOrder = dataName.sort((pok1, pok2) => {
-      return (pok1.name < pok2.name) ? -1 : 1;
-    });
-  } else if (selectOrder == "za") {
-    pokemonNameOrder = dataName.sort((pok1, pok2) => {
-      return (pok1.name > pok2.name) ? -1 : 1;
-    });
+  switch (selectOrder) {
+    case "az":
+      pokemonNameOrder = dataName.sort((pok1, pok2) => {
+        return (pok1.name < pok2.name) ? -1 : 1;
+      });
+      break;
+    case "za":
+      pokemonNameOrder = dataName.sort((pok1, pok2) => {
+        return (pok1.name > pok2.name) ? -1 : 1;
+      });
+      break;
   }
   //console.log(pokemonNameOrder);
   return pokemonNameOrder;
@@ -54,7 +76,7 @@ export const alphabeticalOrder = (selectOrder, dataName) => {
 
 export const typeFilter = (selectorType, dataType) => {
   const pokemonTypeFilter = dataType.filter((pok) => {
-    //indexOf()método devuelve posición de primera aparición valor especificado
+    //indexOf()método devuelve posición de primera aparición valor especificado en un str
     //indexOf() si no coindice devuelve -1
     if (pok.type.indexOf(selectorType) > -1) {
       return true;
@@ -69,7 +91,7 @@ export const typeFilter = (selectorType, dataType) => {
 
 export const rarityFilter = (selectorRarity, dataRarity) => {
   const pokemonRarityFilter = dataRarity.filter((pok) => {
-    //indexOf()método devuelve posición de primera aparición valor especificado
+    //indexOf()método devuelve posición de primera aparición valor especificado en un str
     //indexOf() si no coindice devuelve -1
     if (pok.rarity.indexOf(selectorRarity) > -1) {
       return true;

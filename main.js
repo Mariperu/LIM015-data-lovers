@@ -6,9 +6,10 @@
 import * as dataFunctions from './data.js'; // (*)Importa todo de data.js
 
 
-//HERRAMIENTA FETCH: Usando API pokemon.json
+//Método fetch() toma un argumento obligatorio (ruta de acceso al recurso que desea recuperar)
+//fetch() devuelve una Promesa que se convierte en Response.
 let allData = "";
-fetch('data/pokemon/pokemon.json', {})
+fetch('data/pokemon/pokemon.json')
   .then(pokemon => {
     return pokemon.json();
   })
@@ -51,7 +52,7 @@ const card = document.querySelector('#card');
 
 //FUNCION para extraer información de base de datos
 function showData(itemSearch) {
-  // Para limpiar la página de las cards
+  // Para limpiar la página de cards
   card.innerHTML = "";
   pokemonsCard = [];
 
@@ -101,7 +102,7 @@ function showData(itemSearch) {
     //Front cards
     const section = document.createElement('section');
     section.className = "pokemonCard";
-    section.id = `${itemValue.num}`; //id
+    //section.id = `${itemValue.num}`; //id
     //Back cards
     const section2 = document.createElement('section');
     section2.className = "pokemonCardBack";
@@ -110,13 +111,12 @@ function showData(itemSearch) {
     //append: para agregar mas de una característica
     section.append(number, pic, name, type); //*appendChild solo acepta uno a la vez
     section2.append(about, size, resistant, weaknesses, rarity);
-
-    //Incluimos los items dentro de array
+    //Incluimos las sections dentro de array
     pokemonsCard.push(section, section2);
 
   });
-  //Direccionando items para ubicar en section cards:
-  //operador spread (...), genera una LISTA de valores a partir de un array
+  //Direccionando items para ubicar en section #card:
+  //operador spread (...), genera una lista de valores a partir de un array
   card.append(...pokemonsCard);
 
   return cardInformation;
@@ -190,6 +190,7 @@ statistics.addEventListener('click', () => {
   document.getElementById("sectionGeneralStats").style.display = "block";
 
   //PORCENTAJE DE POKEMONES POR TIPO
+
   const waterStatistics = dataFunctions.getTypeStats(allData, 'water');
   document.getElementById('typeTop').innerHTML =
     "Most of the Pokemons are of the water type, which represents " +
@@ -210,8 +211,7 @@ statistics.addEventListener('click', () => {
   });
 
   //PORCENTAJE DE POKEMONES POR RAREZA
-  //let legendaryStatistics;
-  //let mythicStatistics;
+
   const legendaryStatistics = dataFunctions.getRarityStats(allData, 'legendary');
   document.getElementById('rarity1').innerHTML = legendaryStatistics +
     "% of Pokemons are Legendary?";
@@ -250,7 +250,7 @@ async function drawChart() {
   const json = await obtInfo();
   //console.log(json)
   const data = google.visualization.arrayToDataTable(json);
-  console.log(data);
+  //console.log(data);
   const options = {
     title: 'Pokemons Rarity',
     is3D: true,
@@ -281,7 +281,7 @@ async function drawChart2() {
   const json = await obtInfo();
   //console.log(json)
   const data = google.visualization.arrayToDataTable(json);
-  console.log(data);
+  //console.log(data);
   const options = {
     title: 'Pokemons Type water',
     is3D: true,
