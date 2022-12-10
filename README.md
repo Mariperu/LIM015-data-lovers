@@ -1,4 +1,4 @@
-# POKEDEX Lovers
+# POKE Lovers
 
 ## 1. Descripción proyecto
 
@@ -26,11 +26,13 @@ Este usuario busca información general sobre pokemones, basicamente para conoce
 -  Botón "go home" que lleva a pantalla principal.
 
 ### 3.2. Historia de Usuario DOS:
+
 -  Como: Jugador del juego PokemonGo.
 -  Quiero: Clasificar los pokemones (por tipo, orden alfabético, numérico y por rareza).
 -  Para: Armar una mejor estrategia de batalla y formar equipos.
 
 #### 3.2.1. Criterios de aceptación:
+
 -  Botón desplegable con lista clasificada (tipo, numérico, nombre, y rareza).
 -  Botón "go home" que lleva a pantalla principal.
 
@@ -59,11 +61,10 @@ Creación de nuestros prototipos:
 
 ## 5. Testeos de usabilidad: (describir la experiencia de el uso de la pagina en DEMO de tres compañeras)
 
-- Cuando se busca un pokemon por número, se debe digitar tres cifras, de lo contrario muestra a pokemones que coincidan con el número digitado. Para resolverlo, creamos alertas y placeholder, informando como se debe ingresar el número.
+-  Cuando se busca un pokemon por número, se debe digitar tres cifras, de lo contrario muestra a pokemones que coincidan con el número digitado. Para resolverlo, creamos alertas y placeholder, informando como se debe ingresar el número.
 
-- Los botones selectores, en la primera opción (que describía el llamado a la orden) no funcionaban correctamente, porque estaban habilitados y enviaban a una pantalla vacía al hacer clic. Para resolver el problema, en la etiqueta de la primera opción se adicionó el atributo "selected disabled".
-  
-- Los colores aplicados fueron del agrado de los usuarios, porque son colores representativos del juego.
+-  Los botones selectores, en la primera opción (que describía el llamado a la orden) no funcionaban correctamente, porque estaban habilitados y enviaban a una pantalla vacía al hacer clic. Para resolver el problema, en la etiqueta de la primera opción se adicionó el atributo "selected disabled".
+-  Los colores aplicados fueron del agrado de los usuarios, porque son colores representativos del juego.
 
 ## 6. Plan de Acción:
 
@@ -75,7 +76,7 @@ Creación de nuestros prototipos:
 -  Elaboración del Prototipo
 -  ELaboración de la estructura en HTML.
 -  Aplicar correctamente el uso del DOM.
--  Manejo de Objetos de data 
+-  Manejo de Objetos de data
 -  Realizar en npm test para verificación del correcto uso del codigo.
 -  Implementar hacker edition.
 -  Describir proyecto en README.
